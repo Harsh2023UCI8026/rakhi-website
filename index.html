@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Rakshabandhan ❤️ | Himawari & Riddhi</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Confetti Animation Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Screen 1: Landing Page -->
+  <div id="landing-screen" class="screen active">
+    <div class="landing-card">
+      <div class="img-wrapper">
+        <img src="gif-5.gif" alt="Himawari Cute" class="landing-img" id="landingImg" />
+      </div>
+      <h1 class="landing-text">hi hello meri pyaari himawari - riddhi</h1>
+      <div class="button-group">
+        <button id="startBtn" class="btn btn-start">Start ✨</button>
+        <button id="exitBtn" class="btn btn-exit">Exit ❌</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 2: Gift Selection -->
+  <div id="gifts-screen" class="screen">
+    <div class="gifts-container">
+      <h1 class="gifts-title">Choose a Surprise Gift! 🎁</h1>
+      <p class="gifts-subtitle">Click on any gift box to open your surprise</p>
+
+      <div class="gifts-grid">
+        <div class="gift-card" onclick="openGift(1)">
+          <img src="gif-6.gif" alt="Gift 1" class="gift-gif" />
+          <div class="gift-label">Gift #1 📜</div>
+        </div>
+        <div class="gift-card" onclick="openGift(2)">
+          <img src="gif-6.gif" alt="Gift 2" class="gift-gif" />
+          <div class="gift-label">Gift #2 💳</div>
+        </div>
+        <div class="gift-card" onclick="openGift(3)">
+          <img src="gif-6.gif" alt="Gift 3" class="gift-gif" />
+          <div class="gift-label">Gift #3 🪢</div>
+        </div>
+        <div class="gift-card special-gift" onclick="openGift(4)">
+          <img src="gif-4.gif" alt="Message Gift" class="gift-gif" />
+          <div class="gift-label">Message from Shinchan 💌🎬</div>
+        </div>
+      </div>
+      
+      <button class="btn btn-back" onclick="showScreen('landing-screen')">⬅️ Back to Home</button>
+    </div>
+  </div>
+
+  <!-- Screen 6: Message from Shinchan (Video) -->
+  <div id="gift-4-screen" class="screen">
+    <div class="gift-modal-card">
+      <h2>💌 Message from your Shinchan 🎬</h2>
+      <div class="video-wrapper">
+        <video id="shinchanVideo" controls width="100%" preload="metadata">
+          <source src="message.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <button class="btn btn-back" onclick="closeVideoAndShowGifts()">⬅️ Back to Gifts</button>
+    </div>
+  </div>
+
+  <!-- Screen 3: Gift 1 - Certificate -->
+  <div id="gift-1-screen" class="screen">
+    <div class="gift-modal-card">
+      <h2>🏆 Certificate for Best Sister 🏆</h2>
+      <div class="certificate-wrapper">
+        <img src="certificate.jpeg" alt="Best Sister Certificate" class="certificate-img" />
+      </div>
+      <button class="btn btn-back" onclick="showScreen('gifts-screen')">⬅️ Back to Gifts</button>
+    </div>
+  </div>
+
+  <!-- Screen 4: Gift 2 - Scratch Card -->
+  <div id="gift-2-screen" class="screen">
+    <div class="gift-modal-card">
+      <h2>✨ Special Reward Scratch Card ✨</h2>
+      <p class="scratch-instruction">Scratch below to reveal your prize!</p>
+      
+      <div class="card-container">
+        <div class="reward-layer">
+          <h2>🎉 CONGRATULATIONS!</h2>
+          <div class="amount">₹200</div>
+          <p class="subtitle">GIFT CARD WON</p>
+        </div>
+        <canvas id="scratchCanvas" width="320" height="180"></canvas>
+      </div>
+
+      <button class="btn btn-back" onclick="showScreen('gifts-screen')">⬅️ Back to Gifts</button>
+    </div>
+  </div>
+
+  <!-- Screen 5: Gift 3 - Interactive Rakhi Tying -->
+  <div id="gift-3-screen" class="screen">
+    <div class="gift-modal-card rakhi-card">
+      <h1>Happy Rakshabandhan! ❤️</h1>
+      <p class="instruction">Shinchan Rakhi ko drag karke ya click karke haath par tie karein 🤝</p>
+
+      <div class="hand-container" id="handBox">
+        <img src="hand.jpeg" alt="Hand" class="hand-img">
+        <div class="drop-zone" id="dropZone">📍 Drag / Click Rakhi Here</div>
+      </div>
+
+      <div class="rakhi-tray">
+        <img src="rakhi.png" alt="Shinchan Rakhi" class="draggable-rakhi" id="rakhiImg" draggable="true">
+      </div>
+
+      <div class="success-msg" id="successMsg">🎉 Happy Rakshabandhan meri pyaari himawari - riddhi 🎁✨</div>
+      
+      <div class="action-buttons">
+        <button class="reset-btn" id="resetBtn" onclick="resetRakhi()">Tie again riddhi 🔄</button>
+        <button class="btn btn-back" onclick="showScreen('gifts-screen')">⬅️ Back to Gifts</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
