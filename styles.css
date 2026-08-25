@@ -102,7 +102,6 @@ body {
 }
 
 .btn-start:hover {
-  transform: scale(1.08);
   box-shadow: 0 8px 20px rgba(255, 65, 108, 0.4);
 }
 
@@ -189,7 +188,6 @@ body {
 }
 
 .gift-card:hover {
-  transform: translateY(-8px) scale(1.05);
   border-color: #ff4757;
   box-shadow: 0 12px 25px rgba(255, 71, 87, 0.3);
 }
@@ -258,12 +256,6 @@ body {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  transform-style: preserve-3d;
-  transition: transform 0.3s ease;
-}
-
-.card-container:hover {
-  transform: translateY(-5px) scale(1.02);
 }
 
 .reward-layer {
